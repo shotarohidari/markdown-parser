@@ -1,2 +1,2 @@
-export type THeader = "h1" | "h2"
-export type MarkDown = { type: THeader; text: string }
+export type SyntaxType = "h1" | "h2" | "quote"
+export type MarkDown = { type: SyntaxType; text: string }

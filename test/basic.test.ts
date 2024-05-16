@@ -45,5 +45,12 @@ describe("parseMarkdown", () => {
     ]
 
     expect(result).toEqual(expected)
-  })
+  });
+  test("quote-textをパースできる", () => {
+    const input = "**ハローワールド**"
+    const result = parseMarkdown(input)
+    const expected = [{ type: "quote", text: "ハローワールド" }]
+
+    expect(result).toEqual(expected)
+  });
 })
