@@ -2,10 +2,9 @@ import { MarkDown } from "./types"
 
 function parseLine(line: string): MarkDown {
   const regex =
-    /^(#(?<h1Text>[^#]+))|(##(?<h2Text>[^#]+))|(\*\*(?<quoteText>.+(?=\*\*))\*\*)$/
+    /^(#(?<h1Text>[^#]+))|(##(?<h2Text>[^#]+))|(\*\*(?<quoteText>[^]+(?=\*\*))\*\*)$/
   const match = regex.exec(line)
   if (!match || !match.groups) {
-    console.log({match});
     throw new Error("parse failed.")
   }
   const { groups } = match

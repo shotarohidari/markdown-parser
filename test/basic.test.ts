@@ -53,4 +53,11 @@ describe("parseMarkdown", () => {
 
     expect(result).toEqual(expected)
   });
+  test("改行を含んだquote-textをパースできる", () => {
+    const input = "**ハローワールド\nいつも元気で素敵ですね。**"
+    const result = parseMarkdown(input)
+    const expected = [{ type: "quote", text: "ハローワールド\nいつも元気で素敵ですね。" }]
+
+    expect(result).toEqual(expected)
+  });
 })
