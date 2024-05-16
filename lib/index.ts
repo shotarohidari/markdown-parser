@@ -21,7 +21,8 @@ function parseLine(line: string): MarkDown {
   throw new Error("unreachable!")
 }
 export function parseMarkdown(str: string): MarkDown[] {
-  const lines = str.split("\n")
+  const regex = /\n(?=#)/
+  const lines = str.split(regex)
   return lines.map((line) => {
     return parseLine(line)
   })
